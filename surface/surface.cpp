@@ -6,7 +6,8 @@
 #include <algorithm>
 
 const int len = 10;
-
+const int initialHeight = 50;
+const int heightSpread = 20;
 
 void print(const std::vector<std::vector<int>>& mat) {
 	for (std::vector<int> vec: mat) {
@@ -46,12 +47,15 @@ int main() {
 	std::tuple<int,int> ind = std::tuple<int,int>(rand() % len, rand() % len);
 	std::queue<std::tuple<int,int>> pending;
 	pending.push(ind);
+	mat[std::get<0>(ind)][std::get<1>(ind)] = initialHeight;
 
 	while (pending.size() > 0) {
 		std::tuple<int,int> top = pending.front();
 		pending.pop();
 
+		int mapHeight = mat[std::get<0>(top)][std::get<1>(top)];
 		for (std::tuple<int,int> adj: get_adjacents_to(top, visitRecord)) {
+			mat[std::get<0>(adj)][std::get<1>(adj)] = mapHeight + (rand() % heightSpread) - heightSpread / 2;
 			pending.push(adj);
 			visitRecord[std::get<0>(adj)][std::get<1>(adj)] = true;
 		}
