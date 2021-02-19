@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 #include <algorithm>
 #include <vector>
 #include <cstdlib>
@@ -18,6 +19,12 @@ struct ijMat {
 	int startx, starty;
 	int xlen, ylen;
 	int offset;
+
+	explicit operator std::string() {
+		std::stringstream sstream;
+		sstream << "startx " << startx << "\t+ " << xlen << ". starty " << starty << "\t+ " << ylen << ": " << offset;
+		return sstream.str();
+	}
 };
 
 std::vector<ijMat> compress(std::vector<std::vector<int>> data) {
