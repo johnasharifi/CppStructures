@@ -45,6 +45,8 @@ std::vector<ijMat> compress(std::vector<std::vector<int>> data) {
 				}
 			}
 		}
+
+		if (encounteredNonzero) lenses.push_back(mat);
 	}
 
 	return lenses;
