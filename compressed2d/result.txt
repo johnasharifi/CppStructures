@@ -1,0 +1,20 @@
+0	0	0	0	0	0	0	0	0	0	
+1	1	1	1	1	1	1	1	1	1	
+2	2	2	2	2	2	2	2	2	2	
+3	3	3	3	3	3	3	3	3	3	
+4	4	4	4	4	4	4	4	4	4	
+5	5	5	5	5	5	5	5	5	5	
+6	6	6	6	6	6	6	6	6	6	
+7	7	7	7	7	7	7	7	7	7	
+8	8	8	8	8	8	8	8	8	8	
+9	9	9	9	9	9	9	9	9	9	
+lens length 9
+lens 0 is startx 1	+ 9. starty 0	+ 10: 1
+lens 0 is startx 2	+ 8. starty 0	+ 10: 1
+lens 0 is startx 3	+ 7. starty 0	+ 10: 1
+lens 0 is startx 4	+ 6. starty 0	+ 10: 1
+lens 0 is startx 5	+ 5. starty 0	+ 10: 1
+lens 0 is startx 6	+ 4. starty 0	+ 10: 1
+lens 0 is startx 7	+ 3. starty 0	+ 10: 1
+lens 0 is startx 8	+ 2. starty 0	+ 10: 1
+lens 0 is startx 9	+ 1. starty 0	+ 10: 1
