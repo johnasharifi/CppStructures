@@ -80,5 +80,12 @@ int main() {
 
 	print(rawDataset1);
 
+	std::vector<ijMat> lenses = compress(rawDataset1);
+	std::cout << "lens length " << lenses.size() << std::endl;
+	int i = 0;
+	for (ijMat mat : lenses) {
+		std::cout << "lens " << i << " is " << (std::string) mat << std::endl;
+	}
+
 	return 0;
 }
