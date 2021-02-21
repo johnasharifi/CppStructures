@@ -10,7 +10,7 @@ The purpose of this repository is to force me to train myself in writing C++ fro
     docker run -it gcc
     
     apt-get update
-    apt-install vim -y
+    apt install vim -y
     
     g++ --version > g++ (GCC) 10.2.0
     
