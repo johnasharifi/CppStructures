@@ -4,11 +4,10 @@
 #include <iostream>
 #include <time.h>
 
-void print(const std::vector<float> gains) {
-	float mult = 1.0f;
-	for (float v: gains) {
-		mult = mult * v;
-		std::cout << "change " << v << " gives effective " << mult << std::endl;
+template <class T>
+void print(const std::vector<T> gains) {
+	for (T v: gains) {
+		std::cout << v << std::endl;
 	}
 }
 
