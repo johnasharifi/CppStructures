@@ -35,13 +35,13 @@ class TreeFilter {
 		}
 
 		void release() {
-			if (ltree != nullptr) ltree->release();
-			if (rtree != nullptr) rtree->release();
+			if (ltree != nullptr) { ltree->release(); delete ltree; }
+			if (rtree != nullptr) { rtree->release(); delete rtree; }
 		}
 
 		~TreeFilter() {
-			this->release();
-			delete this;
+			if (ltree != nullptr) delete ltree;
+			if (rtree != nullptr) delete rtree;
 		}
 
 };
