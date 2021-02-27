@@ -8,7 +8,7 @@ class TreeFilter {
 
 		void insert(int v) {
 			// set up vars
-			int ones = v & (1 << 1);
+			int ones = v & (1 << 0);
 			bool hasRemainder = v > 1;
 
 			if (hasRemainder) {
@@ -22,7 +22,7 @@ class TreeFilter {
 			}
 		}
 		bool contains(int v) {
-			int ones = v & (1 << 1);
+			int ones = v & (1 << 0);
 			bool hasRemainder = v > 1;
 
 			if (hasRemainder) {
@@ -31,7 +31,17 @@ class TreeFilter {
 				if (ones == 1 && rtree == nullptr) return false;
 				if (ones == 1) return rtree->contains(v / 2);
 			}
-			else return isContainer;
+			return isContainer;
+		}
+
+		void release() {
+			if (ltree != nullptr) ltree->release();
+			if (rtree != nullptr) rtree->release();
+		}
+
+		~TreeFilter() {
+			this->release();
+			delete this;
 		}
 
 };
@@ -39,3 +49,4 @@ class TreeFilter {
 int main() {
 
 }
+
