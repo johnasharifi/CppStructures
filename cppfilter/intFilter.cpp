@@ -47,6 +47,14 @@ class TreeFilter {
 };
 
 int main() {
+	TreeFilter* filter = new TreeFilter;
+	for (int i = 0; i < 10; ++i) filter->insert(i);
+	for (int i = 0; i < 10 * 2; ++i) {
+		std::cout << "filter contains " << i << "? " << filter->contains(i) << std::endl;
+	}
 
+	delete filter;
 }
+
+
 
