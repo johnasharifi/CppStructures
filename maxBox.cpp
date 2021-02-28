@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 bool sameKey(const std::vector<std::vector<int>>& data, int startx, int starty, int endx, int endy) {
-	if (startx <= endx && starty <= endy) return true;
+	if (startx == endx && starty == endy) return true;
 
 	int key = data[startx][starty];
 
@@ -39,7 +39,7 @@ std::vector<int> findBox(const std::vector<std::vector<int>>& data, int startx, 
 	while (maxx+1 < data.size() && sameKey(data, startx, starty, maxx + 1, maxy + 0)) {
 		maxx++;
 	}
-	while (maxy+1 < data[0].size() && sameKey(data, startx, stary, maxx + 0, maxy + 1)) {
+	while (maxy+1 < data[0].size() && sameKey(data, startx, starty, maxx + 0, maxy + 1)) {
 		maxy++;
 	}
 
@@ -84,7 +84,6 @@ std::vector<std::vector<int>> randomBoxes(int dim) {
 	}
 
 	return data;
-
 }
 
 void print(const std::vector<std::vector<int>>& vec) {
@@ -99,4 +98,8 @@ void print(const std::vector<std::vector<int>>& vec) {
 int main() {
 	std::vector<std::vector<int>> data = randomBoxes(10);
 	print(data);
+
+	int key = data[5][5];
+	std::vector<int> maxFrom5 = findBox(data, 5,5);
+	std::cout << "key " << key << "spans from 5,5 to " << maxFrom5[0] << ", " << maxFrom5[1] << std::endl;
 }
