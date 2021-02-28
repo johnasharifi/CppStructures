@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <stdlib.h>
+#include <time.h>
 
 bool sameKey(const std::vector<std::vector<int>>& data, int startx, int starty, int endx, int endy) {
 	if (startx == endx && starty == endy) return true;
@@ -51,6 +52,7 @@ std::vector<int> findBox(const std::vector<std::vector<int>>& data, int startx, 
 }
 
 std::vector<std::vector<int>> randomBoxes(int dim) {
+	srand(time(NULL));
 	//set up vector of vectors
 	std::vector<std::vector<int>> data;
 
@@ -101,5 +103,5 @@ int main() {
 
 	int key = data[5][5];
 	std::vector<int> maxFrom5 = findBox(data, 5,5);
-	std::cout << "key " << key << "spans from 5,5 to " << maxFrom5[0] << ", " << maxFrom5[1] << std::endl;
+	std::cout << "key " << key << " spans from 5,5 to " << maxFrom5[0] << ", " << maxFrom5[1] << std::endl;
 }
