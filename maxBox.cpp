@@ -3,6 +3,53 @@
 #include <algorithm>
 #include <stdlib.h>
 
+bool sameKey(const std::vector<std::vector<int>>& data, int startx, int starty, int endx, int endy) {
+	if (startx <= endx && starty <= endy) return true;
+
+	int key = data[startx][starty];
+
+	// confirm that smaller rect is same key
+	if (endx > startx && endy > starty) {
+		bool smaller_square = sameKey(data, startx, starty, endx - 1, endy - 1);
+		if (!smaller_square) return false;
+	}
+
+	// check edge where x varies
+	for (int x = startx; x <= endx; ++x) {
+		if (data[x][endy] != key) return false;
+	}
+
+	// check edge where y varies
+	for (int y = starty; y <= endy; ++y) {
+		if (data[endx][y] != key) return false;
+	}
+
+	return data[startx][starty] == data[endx][endy];
+}
+
+// given startx, starty returns endx, endy
+std::vector<int> findBox(const std::vector<std::vector<int>>& data, int startx, int starty) {
+	int maxx = startx;
+	int maxy = starty;
+
+	while (maxx+1 < data.size() && maxy+1 < data[0].size() && sameKey(data, startx, starty, maxx + 1, maxy + 1)) {
+		maxx++;
+		maxy++;
+	}
+	while (maxx+1 < data.size() && sameKey(data, startx, starty, maxx + 1, maxy + 0)) {
+		maxx++;
+	}
+	while (maxy+1 < data[0].size() && sameKey(data, startx, stary, maxx + 0, maxy + 1)) {
+		maxy++;
+	}
+
+	std::vector<int> maxinds;
+	maxinds.push_back(maxx);
+	maxinds.push_back(maxy);
+
+	return maxinds;
+}
+
 std::vector<std::vector<int>> randomBoxes(int dim) {
 	//set up vector of vectors
 	std::vector<std::vector<int>> data;
