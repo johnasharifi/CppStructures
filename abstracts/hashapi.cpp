@@ -6,6 +6,14 @@
 #include <map>
 #include <unordered_map>
 
+void printSet(const std::set<int> set) {
+	std::cout << "set (" << set.size() << "): ";
+	for (int i: set) {
+		std::cout << i << ", ";
+	}
+	std::cout << std::endl;
+}
+
 int main() {
 	std::set<int> set;
 	std::map<int,int> map;
@@ -42,6 +50,16 @@ int main() {
 	for (auto kvp : distances) {
 		std::cout << "key " << kvp.first << " has value " << kvp.second << std::endl;
 	}
+	
+	// set erase value
+	std::set<int> myset;
+	const int len = 3;
+	for (int i = 0; i < len; ++i)
+		myset.insert(i * i * len);
 
+	printSet(myset);
+	myset.erase((len-1)*(len-1) * len);
+	printSet(myset);
+	
 	return 0;
 }
