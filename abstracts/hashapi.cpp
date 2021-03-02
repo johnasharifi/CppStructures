@@ -32,5 +32,16 @@ int main() {
 		std::cout << "for i " << i << ": in set? " << setContains << ". in map? " << mapContains << ". in umap? " << umapContains << std::endl;	
 	}
 
+	// key-value iteration
+
+	std::map<int, float> distances;
+	distances[0] = 10.0f;
+	distances[1] = 20.0f;
+	distances[2] = 30.0f;
+
+	for (auto kvp : distances) {
+		std::cout << "key " << kvp.first << " has value " << kvp.second << std::endl;
+	}
+
 	return 0;
 }
