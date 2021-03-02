@@ -6,6 +6,16 @@
 #include <map>
 #include <unordered_map>
 
+void printUmap(const std::unordered_map<int,int> umap) {
+	std::cout << "umap (" << umap.size() << "): " << std::endl;
+
+	for (auto kvp: umap) {
+		std::cout << "\t" << kvp.first << ": " << kvp.second << std::endl;
+	}
+
+	std::cout << std::endl;
+}
+
 void printSet(const std::set<int> set) {
 	std::cout << "set (" << set.size() << "): ";
 	for (int i: set) {
@@ -51,7 +61,7 @@ int main() {
 		std::cout << "key " << kvp.first << " has value " << kvp.second << std::endl;
 	}
 	
-	// set erase value
+	// set erase by value
 	std::set<int> myset;
 	const int len = 3;
 	for (int i = 0; i < len; ++i)
@@ -60,6 +70,20 @@ int main() {
 	printSet(myset);
 	myset.erase((len-1)*(len-1) * len);
 	printSet(myset);
+	
+	// unordered map erase by value
+	std::unordered_map<int,int> umap_erase;
+	umap_erase[0] = 10;
+	umap_erase[1] = 100;
+	umap_erase[2] = 1000;
+
+	printUmap(umap_erase);
+
+	umap_erase.erase(0);
+	umap_erase.erase(2);
+
+	printUmap(umap_erase);
+
 	
 	return 0;
 }
