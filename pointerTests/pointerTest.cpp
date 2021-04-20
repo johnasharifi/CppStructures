@@ -8,7 +8,13 @@ class testClass {
 
 	// private: // destructor cannot be private
 	~testClass() {
-		std::cout << "destructor. values " << i << ", " << j << std::endl;
+		std::cout << "destroying " << *this << std::endl;
+	}
+
+	// have to mark as friend class
+	friend std::ostream& operator<<(std::ostream& stream, const testClass& mobj) {
+		stream << typeid(mobj).name() << " with i = " << mobj.i << " and j = " << mobj.j;
+		return stream;
 	}
 
 
@@ -18,7 +24,7 @@ int main() {
 	std::cout << "cplusplus version " << __cplusplus << std::endl;
 
 	testClass* t1 = new testClass {3,4};
-	std::cout << "t1 pointer has i = " << t1->i << " and j = " << t1->j << std::endl;
+	std::cout << "t1: " << *t1 << std::endl;
 	delete t1;
 
 	std::unique_ptr<testClass> uptr(new testClass{ 5,6});
