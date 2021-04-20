@@ -28,6 +28,6 @@ int main() {
 	delete t1;
 
 	std::unique_ptr<testClass> uptr(new testClass{ 5,6});
-	std::cout << "t1 pointer has i = " << uptr->i << " and j = " << uptr->j << std::endl;
+	std::cout << "uptr: " << *uptr << std::endl;
 }
 
