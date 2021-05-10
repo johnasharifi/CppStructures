@@ -33,9 +33,31 @@ std::vector<std::vector<int>> getBoxInBox(int dim1, int dim2) {
 	return signals;
 }
 
+// the line structure permits the tester to test whether a grid-aligned point is above or below the line
+struct line {
+	public:
+	float xstart, ystart, slope;
+
+	bool sepTest(int xcoord, int ycoord) {
+		return (xcoord - xstart) * slope - (ycoord - ystart) >= 0.0f;
+	}
+};
+
+
+
 int main() {
-	std::vector<std::vector<int>> box = getRandomBoxInBox(25, 15);
-	print(box);
+	std::vector<std::vector<int>> box = getBoxInBox(15, 25);
+
+	line l {0.0f, 0.0f, 0.5f};
+	std::vector<std::vector<int>> box2 = getBoxInBox(15,15);
+	for (int i = 0; i < box2.size(); ++i) {
+		for (int j = 0; j < box2[0].size(); ++j) {
+			box2[i][j] = l.sepTest(i,j)? 0:1;
+		}
+	}
+	print(box2);
+
+	// print(box);
 	return 0;
 }
 
