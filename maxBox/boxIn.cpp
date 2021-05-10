@@ -43,21 +43,33 @@ struct line {
 	}
 };
 
+std::vector<std::vector<int>> testContainmentOf(const std::vector<std::vector<int>> signals, line l1, line l2, line l3, line l4) {
+	std::vector<std::vector<int>> testResult;
 
+	for (int i = 0; i < signals.size(); ++i) {
+		testResult.push_back(std::vector<int>());
+		for (int j = 0; j < signals[0].size(); ++j) {
+			bool contained = l1.sepTest(i,j) && l2.sepTest(i,j) && l3.sepTest(i,j) && l4.sepTest(i,j);
+			// signals are 0 - outside, 1 - contained
+			int correctness = contained == signals[i][j];
+			testResult[i].push_back(correctness);
+		}
+	}
+
+	return testResult;
+}
 
 int main() {
 	std::vector<std::vector<int>> box = getBoxInBox(15, 25);
 
-	line l {0.0f, 0.0f, 0.5f};
-	std::vector<std::vector<int>> box2 = getBoxInBox(15,15);
-	for (int i = 0; i < box2.size(); ++i) {
-		for (int j = 0; j < box2[0].size(); ++j) {
-			box2[i][j] = l.sepTest(i,j)? 0:1;
-		}
-	}
-	print(box2);
+	line l1 {0.0f, 0.0f, 0.5f};
+	line l2 {0.0f, 0.0f, 0.2f};
+	line l3 {0.0f, 0.0f, 0.3f};
+	line l4 {0.0f, 0.0f, 0.1f};
 
-	// print(box);
+	auto testResults = testContainmentOf(box, l1, l2, l3, l4);
+
+	print(testResults);
 	return 0;
 }
 
