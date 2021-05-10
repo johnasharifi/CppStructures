@@ -69,6 +69,8 @@ int main() {
 
 	auto testResults = testContainmentOf(box, l1, l2, l3, l4);
 
+	print(box);
+
 	print(testResults);
 	return 0;
 }
