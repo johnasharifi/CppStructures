@@ -3,16 +3,18 @@
 #include <vector>
 
 template <typename keyType, typename valueType>
-std::vector<std::unordered_map<keyType, valueType>> cartesianProductWith(std::unordered_map<keyType, valueType> current, const keyType& key, const std::vector<valueType>& values) {
-	std::vector< std::unordered_map<keyType, valueType> > data;
+std::vector<std::unordered_map<keyType, valueType>> cartesianProductWith(const std::vector< std::unordered_map<keyType, valueType> >& currentGeneration, const keyType& key, const std::vector<valueType>& values) {
+	std::vector< std::unordered_map<keyType, valueType> > nextGeneration;
 
-	// TODO do ij iteration through a vector of maps and a range of values here
-	for (int i = 0; i < (int) values.size(); ++i) {
-		data.push_back(current);
-		data[i][key] = values[i];
+	// do ij iteration through a vector of maps and a range of values here
+	for (int i = 0; i < (int) currentGeneration.size(); ++i) {
+		for (int j = 0; j < (int) values.size(); ++j) {
+			nextGeneration.push_back(currentGeneration[i]);
+			nextGeneration[nextGeneration.size() - 1][key] = values[j];
+			std::cout << "to vec " << i << " attached value " << values[j] << " for total len " << nextGeneration[i].size() << std::endl;
+		}
 	}
-
-	return data;
+	return nextGeneration;
 }
 
 template <typename keyType, typename valueType>
@@ -38,12 +40,12 @@ int main() {
 	std::vector< std::unordered_map<char, int> > products;
 	products.push_back(map);
 
-	// iterate through a cartesian product generations
-	std::vector <std::unordered_map<char, int> > nextProduct = cartesianProductWith(map, 'c', range(0,5));
-	for (int i: range(0,5)) {
-		print(std::string("nextProduct " + std::to_string(i)), nextProduct[i]);
+	// iterate through a cartesian product generation
+	products = cartesianProductWith(products, 'c', points);
+	// iterate through a second cartesian product generation
+	products = cartesianProductWith(products, 'd', points);
+
+	for (int i = 0; i < (int) products.size(); ++i) {
+		print(std::string("nextProduct " + std::to_string(i)), products[i]);
 	}
-
-
-	print(std::string("map"), products[0]);
 }
