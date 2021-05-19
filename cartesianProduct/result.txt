@@ -1,0 +1,105 @@
+to vec 0 attached value 0 for total len 1
+to vec 0 attached value 1 for total len 1
+to vec 0 attached value 2 for total len 1
+to vec 0 attached value 3 for total len 1
+to vec 0 attached value 4 for total len 1
+to vec 0 attached value 0 for total len 2
+to vec 0 attached value 1 for total len 2
+to vec 0 attached value 2 for total len 2
+to vec 0 attached value 3 for total len 2
+to vec 0 attached value 4 for total len 2
+to vec 1 attached value 0 for total len 2
+to vec 1 attached value 1 for total len 2
+to vec 1 attached value 2 for total len 2
+to vec 1 attached value 3 for total len 2
+to vec 1 attached value 4 for total len 2
+to vec 2 attached value 0 for total len 2
+to vec 2 attached value 1 for total len 2
+to vec 2 attached value 2 for total len 2
+to vec 2 attached value 3 for total len 2
+to vec 2 attached value 4 for total len 2
+to vec 3 attached value 0 for total len 2
+to vec 3 attached value 1 for total len 2
+to vec 3 attached value 2 for total len 2
+to vec 3 attached value 3 for total len 2
+to vec 3 attached value 4 for total len 2
+to vec 4 attached value 0 for total len 2
+to vec 4 attached value 1 for total len 2
+to vec 4 attached value 2 for total len 2
+to vec 4 attached value 3 for total len 2
+to vec 4 attached value 4 for total len 2
+nextProduct 0
+	key d maps to value 0
+	key c maps to value 0
+nextProduct 1
+	key d maps to value 1
+	key c maps to value 0
+nextProduct 2
+	key d maps to value 2
+	key c maps to value 0
+nextProduct 3
+	key d maps to value 3
+	key c maps to value 0
+nextProduct 4
+	key d maps to value 4
+	key c maps to value 0
+nextProduct 5
+	key d maps to value 0
+	key c maps to value 1
+nextProduct 6
+	key d maps to value 1
+	key c maps to value 1
+nextProduct 7
+	key d maps to value 2
+	key c maps to value 1
+nextProduct 8
+	key d maps to value 3
+	key c maps to value 1
+nextProduct 9
+	key d maps to value 4
+	key c maps to value 1
+nextProduct 10
+	key d maps to value 0
+	key c maps to value 2
+nextProduct 11
+	key d maps to value 1
+	key c maps to value 2
+nextProduct 12
+	key d maps to value 2
+	key c maps to value 2
+nextProduct 13
+	key d maps to value 3
+	key c maps to value 2
+nextProduct 14
+	key d maps to value 4
+	key c maps to value 2
+nextProduct 15
+	key d maps to value 0
+	key c maps to value 3
+nextProduct 16
+	key d maps to value 1
+	key c maps to value 3
+nextProduct 17
+	key d maps to value 2
+	key c maps to value 3
+nextProduct 18
+	key d maps to value 3
+	key c maps to value 3
+nextProduct 19
+	key d maps to value 4
+	key c maps to value 3
+nextProduct 20
+	key d maps to value 0
+	key c maps to value 4
+nextProduct 21
+	key d maps to value 1
+	key c maps to value 4
+nextProduct 22
+	key d maps to value 2
+	key c maps to value 4
+nextProduct 23
+	key d maps to value 3
+	key c maps to value 4
+nextProduct 24
+	key d maps to value 4
+	key c maps to value 4
