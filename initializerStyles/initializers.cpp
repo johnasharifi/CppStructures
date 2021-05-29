@@ -39,6 +39,7 @@ int main() {
 	// std::vector<int> intVector2 = intArray1;
 	std::vector<int> intVector2(intArray1, intArray1 + 4);
 
-	print(intVector1);
-	print(intVector2);
+	for (std::vector<int> vector: {intVector1, intVector2}) {
+		print(vector);
+	}
 }
