@@ -33,6 +33,7 @@ int main() {
 	const int intArray1[] = {1,2,3,4};
 
 	// g++ version 11+
+	// fails to compile if you do g++ -std=c++98 initializers.cpp
 	std::vector<int> intVector1 = {1,2,3,4};
 
 	// this is not possible because vector initialization using {} is a token optimization, not a type conversion
