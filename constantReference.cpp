@@ -63,12 +63,20 @@ int main() {
 
 	int mint = 4;
 	int const* ptrToConstInt = &mint;
+	// equivalent to const int*
+	std::cout << "ptrToConstInt originally pointed at value " << *ptrToConstInt << "\n";
+
 	ptrToConstInt = &mint;
 	int mint2 = 5;
-	// *ptrToConstInt = &mint2;
+	ptrToConstInt = &mint2;
+
+	std::cout << "ptrToConstInt now points at value " << *ptrToConstInt << "\n";
+
 	// we can update the intPtr. intPtr is a pointer to a constant int
 	// but we cannot change the value pointed to by the intPtr
-	// *intPtr = 3;
+	// *ptrTpConstInt = 3;
 
-	// const int* intPtr = 
+	int *const constPtrToInt = &mint;
+	// not possible because our constant pointer-to-integer cannot be reassigned
+       	// constPtrToInt = &mint2;
 }
