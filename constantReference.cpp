@@ -49,6 +49,15 @@ int main() {
 	// can call ptr->str11, as this is a constant method which maintains the const ptr's promise to not mutate
 	std::cout << "ptr value was initialized to 3. value is still " << ptrToClass->str11() << "\n";
 
+	// this will not cmpile due to conflicting definition.
+	// we marked a const ptr to class, but now we are reassigning it!
+	// canMultiply* const ptrToClass = new canMultiply(4);
+	
+	// read right to left: const pointer to a <type> of an immutable/const object
+	const canMultiply* const ptrToClass2 = new canMultiply(4);
+	std::cout << "ptr2 address is " << ptrToClass2->str11() << "\n";
+	delete ptrToClass2;
+
 	delete ptrToClass;
 	delete doubleTest;
 }
