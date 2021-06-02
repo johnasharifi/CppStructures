@@ -60,4 +60,15 @@ int main() {
 
 	delete ptrToClass;
 	delete doubleTest;
+
+	int mint = 4;
+	int const* ptrToConstInt = &mint;
+	ptrToConstInt = &mint;
+	int mint2 = 5;
+	// *ptrToConstInt = &mint2;
+	// we can update the intPtr. intPtr is a pointer to a constant int
+	// but we cannot change the value pointed to by the intPtr
+	// *intPtr = 3;
+
+	// const int* intPtr = 
 }
