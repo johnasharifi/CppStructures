@@ -1,0 +1,8 @@
+initialized. value is now 2
+doubled. value is now 4
+before re-pointing, const ptrToClass address is 0x1f80eb0
+after re-pointing const ptrToClass to new ptrToClass(3), address is 0x1f81ee0
+ptr value was initialized to 3. value is still 3
+ptr2 address is 4
+ptrToConstInt originally pointed at value 4
+ptrToConstInt now points at value 5
